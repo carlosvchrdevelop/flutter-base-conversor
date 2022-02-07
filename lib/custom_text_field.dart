@@ -6,17 +6,20 @@ class CustomTextField extends StatelessWidget {
   final String label;
   final String regExp;
   final bool isNumeric;
+  final Function onChanged;
   const CustomTextField(
       {Key? key,
       required this.controller,
       required this.label,
       required this.regExp,
-      required this.isNumeric})
+      required this.isNumeric,
+      required this.onChanged})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (e) => onChanged(),
       controller: controller,
       style: const TextStyle(fontSize: 30),
       textAlign: TextAlign.center,

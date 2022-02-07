@@ -15,23 +15,27 @@ class HomeScreen extends StatelessWidget {
       children: [
         CustomTextField(
             controller: dataProvider.getDecimalController(),
+            onChanged: dataProvider.setDecimal,
             label: 'Decimal',
-            regExp: r'([0-9]+\.?[0-9]*|\.[0-9]+)',
+            regExp: r'([0-9]*)',
             isNumeric: true),
         CustomTextField(
             controller: dataProvider.getHexadecimalController(),
+            onChanged: dataProvider.setHexadecimal,
             label: 'Hexadecimal',
-            regExp: r'([0-9A-Fa-f]+\.?[0-9A-Fa-f]*|\.[0-9A-Fa-f]+)',
+            regExp: r'([0-9A-Fa-f]*)',
             isNumeric: false),
         CustomTextField(
             controller: dataProvider.getBinaryController(),
+            onChanged: dataProvider.setBinary,
             label: 'Binario',
-            regExp: r'([0-1]+\.?[0-1]*|\.[0-1]+)',
+            regExp: r'([0-1]*)',
             isNumeric: true),
         CustomTextField(
             controller: dataProvider.getOctalController(),
+            onChanged: dataProvider.setOctal,
             label: 'Octal',
-            regExp: r'([0-7]+\.?[0-7]*|\.[0-7]+)',
+            regExp: r'([0-7]*)',
             isNumeric: true),
         const SizedBox(height: 10),
       ],
