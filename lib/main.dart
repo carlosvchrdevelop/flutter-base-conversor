@@ -14,9 +14,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (BuildContext context) => DataProvider(),
-      child: const MaterialApp(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Base conversor',
-        home: HomeScreen(),
+        home: Scaffold(
+            appBar: AppBar(title: const Text('Conversor de base')),
+            body: const Center(
+              child:
+                  FractionallySizedBox(widthFactor: 0.9, child: HomeScreen()),
+            )),
       ),
     );
   }

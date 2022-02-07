@@ -10,31 +10,31 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dataProvider = Provider.of<DataProvider>(context);
-    return Center(
-        child: Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CustomTextField(
             controller: dataProvider.getDecimalController(),
             label: 'Decimal',
-            regExp: '', //r'([0-9]+\.?[0-9]*|\.[0-9]+)',
+            regExp: r'([0-9]+\.?[0-9]*|\.[0-9]+)',
             isNumeric: true),
         CustomTextField(
             controller: dataProvider.getHexadecimalController(),
             label: 'Hexadecimal',
-            regExp: '', //r'([0-9A-Fa-f]+\.?[0-9A-Fa-f]*|\.[0-9A-Fa-f]+)',
+            regExp: r'([0-9A-Fa-f]+\.?[0-9A-Fa-f]*|\.[0-9A-Fa-f]+)',
             isNumeric: false),
         CustomTextField(
             controller: dataProvider.getBinaryController(),
             label: 'Binario',
-            regExp: '', //r'([0-1]+\.?[0-1]*|\.[0-1]+)',
+            regExp: r'([0-1]+\.?[0-1]*|\.[0-1]+)',
             isNumeric: true),
         CustomTextField(
             controller: dataProvider.getOctalController(),
             label: 'Octal',
-            regExp: '', //r'([0-7]+\.?[0-7]*|\.[0-7]+)',
+            regExp: r'([0-7]+\.?[0-7]*|\.[0-7]+)',
             isNumeric: true),
+        const SizedBox(height: 10),
       ],
-    ));
+    );
   }
 }
